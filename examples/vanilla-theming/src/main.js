@@ -5,5 +5,6 @@ import "@lightleaplabs/ui/card";
 import "@lightleaplabs/ui/heading";
 import "@lightleaplabs/ui/stack";
 import "@lightleaplabs/ui/text";
-import "./theme.css";
+// Application overrides must load after the public token and theme styles.
+import "./lightleap-overrides.css";
 import "./style.css";

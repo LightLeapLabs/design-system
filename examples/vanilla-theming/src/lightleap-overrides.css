@@ -1,3 +1,10 @@
+/*
+ * This is a shortened copy of the complete template at:
+ * node_modules/@lightleaplabs/tokens/dist/tokens.overrides.template.css
+ *
+ * Copy that file into your application, uncomment the supported tokens you
+ * need, and load it after @lightleaplabs/tokens/public and /theme.
+ */
 :root {
   --brand-on-light: oklch(55% 0.22 290);
   --brand-on-dark: oklch(75% 0.16 290);
