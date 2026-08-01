@@ -1,0 +1,71 @@
+name: Bug report
+description: Report a reproducible problem in @lightleaplabs/ui or @lightleaplabs/tokens.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues for the same problem.
+          required: true
+        - label: I can reproduce this with packages installed from the public npm registry.
+          required: true
+        - label: This is not a security vulnerability.
+          required: true
+  - type: dropdown
+    id: package
+    attributes:
+      label: Affected package
+      options:
+        - "@lightleaplabs/ui"
+        - "@lightleaplabs/tokens"
+        - Both
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Package versions
+      placeholder: "@lightleaplabs/ui 0.3.1, @lightleaplabs/tokens 0.3.0"
+    validations:
+      required: true
+  - type: input
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Link to a small public repository, StackBlitz, CodePen, or equivalent.
+      placeholder: https://...
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+      placeholder: |
+        1. Install ...
+        2. Render ...
+        3. Observe ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Browser, runtime, framework, operating system, and bundler versions.
+    validations:
+      required: true

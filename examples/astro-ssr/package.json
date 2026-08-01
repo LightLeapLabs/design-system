@@ -1,0 +1,21 @@
+{
+  "name": "@lightleap-examples/astro-ssr",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "start": "node ./dist/server/entry.mjs"
+  },
+  "dependencies": {
+    "@astrojs/node": "^9.2.2",
+    "@astrojs/react": "^4.2.4",
+    "@lightleaplabs/tokens": "0.3.0",
+    "@lightleaplabs/ui": "0.3.1",
+    "astro": "^5.7.0",
+    "lit": "^3.3.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}

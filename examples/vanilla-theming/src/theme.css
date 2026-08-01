@@ -1,0 +1,14 @@
+:root {
+  --brand-on-light: oklch(55% 0.22 290);
+  --brand-on-dark: oklch(75% 0.16 290);
+  --accent-on-light: oklch(55% 0.22 290);
+  --accent-on-dark: oklch(75% 0.16 290);
+  --button-solid-bg-on-light: oklch(55% 0.22 290);
+  --button-solid-bg-on-dark: oklch(75% 0.16 290);
+  --button-solid-bg-hover-on-light: oklch(48% 0.24 290);
+  --button-solid-bg-hover-on-dark: oklch(82% 0.12 290);
+  --radius-button-on-light: 0.4rem;
+  --radius-button-on-dark: 0.4rem;
+  --radius-card-on-light: 0.4rem;
+  --radius-card-on-dark: 0.4rem;
+}

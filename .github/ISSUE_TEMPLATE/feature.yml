@@ -1,0 +1,44 @@
+name: Feature request
+description: Propose an addition or improvement to the public package API.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues and documentation for this capability.
+          required: true
+  - type: dropdown
+    id: package
+    attributes:
+      label: Package
+      options:
+        - "@lightleaplabs/ui"
+        - "@lightleaplabs/tokens"
+        - Both
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or use case
+      description: Describe the user problem, not only the requested API.
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: Minimal example
+      description: Show the desired markup, component API, token override, or runnable reproduction.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+    validations:
+      required: true

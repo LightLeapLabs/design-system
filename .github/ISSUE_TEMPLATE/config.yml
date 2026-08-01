@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: LightLeap documentation
+    url: https://www.lightleaplabs.com/
+    about: Read installation, API, theming, and compatibility documentation.
+  - name: Security report
+    url: https://github.com/lightleaplabs/design-system/security/policy
+    about: Do not disclose vulnerabilities in a public issue.

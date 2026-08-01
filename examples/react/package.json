@@ -1,0 +1,20 @@
+{
+  "name": "@lightleap-examples/react",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@lightleaplabs/tokens": "0.3.0",
+    "@lightleaplabs/ui": "0.3.1",
+    "lit": "^3.3.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "vite": "^6.2.0"
+  }
+}
