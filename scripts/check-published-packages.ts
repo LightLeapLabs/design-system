@@ -1,6 +1,6 @@
 const expected = {
-  "@lightleaplabs/tokens": "0.3.0",
-  "@lightleaplabs/ui": "0.3.1",
+  "@lightleaplabs/tokens": "0.4.0",
+  "@lightleaplabs/ui": "0.4.0",
 } as const;
 
 const examples = ["astro-ssr", "react", "vanilla-theming"];
