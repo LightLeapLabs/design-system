@@ -1,6 +1,7 @@
 # LightLeap Design System packages
 
-The `@lightleaplabs/ui` and `@lightleaplabs/tokens` packages ship built output only; their source code is not public. This public repository is the issue tracker and home for runnable integration examples—it does not contain the package source.
+> [!NOTE]
+> The `@lightleaplabs/ui` and `@lightleaplabs/tokens` packages ship built output only; their source code is not public. This public repository is the issue tracker and home for runnable integration examples—it does not contain the package source.
 
 LightLeap provides framework-agnostic web components, generated React wrappers,
 and the design tokens that style them. See the
