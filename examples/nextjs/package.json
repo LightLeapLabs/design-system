@@ -1,0 +1,18 @@
+{
+  "name": "@lightleap-examples/nextjs",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@lightleaplabs/tokens": "0.4.0",
+    "@lightleaplabs/ui": "0.4.0",
+    "lit": "^3.3.1",
+    "next": "^16.3.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}
