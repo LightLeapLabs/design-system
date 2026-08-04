@@ -3,7 +3,7 @@ const expected = {
   "@lightleaplabs/ui": "0.4.0",
 } as const;
 
-const examples = ["astro-ssr", "react", "vanilla-theming"];
+const examples = ["astro-ssr", "nextjs", "react", "vanilla-theming"];
 
 for (const example of examples) {
   const manifest = await Bun.file(`examples/${example}/package.json`).json();

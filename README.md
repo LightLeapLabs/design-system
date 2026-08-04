@@ -45,8 +45,11 @@ change:
 
 ```bash
 cp node_modules/@lightleaplabs/tokens/dist/tokens.overrides.template.css \
-  ./src/lightleap-overrides.css
+  ./src/brand-overrides.css
 ```
+
+`brand-overrides.css` is the recommended consumer filename, not a generated
+package artifact. You can choose another project-local name.
 
 Load the override file after the public tokens and theme so its declarations win
 the cascade:
@@ -54,7 +57,7 @@ the cascade:
 ```css
 @import "@lightleaplabs/tokens/public";
 @import "@lightleaplabs/tokens/theme";
-@import "./lightleap-overrides.css";
+@import "./brand-overrides.css";
 ```
 
 Define both light and dark variants when a token supports surfaces:
@@ -81,6 +84,7 @@ registry. They never link to a LightLeap source workspace.
 | --------------------------------------------- | ----------------------------------------------------- |
 | [`vanilla-theming`](examples/vanilla-theming) | Custom elements and application-level token overrides |
 | [`react`](examples/react)                     | Generated React wrappers in a client application      |
+| [`nextjs`](examples/nextjs)                   | App Router SSR and an explicit client boundary         |
 | [`astro-ssr`](examples/astro-ssr)             | Node SSR, inert server markup, and client hydration   |
 
 Run all examples with Bun:
