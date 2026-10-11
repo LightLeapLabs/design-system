@@ -1,11 +1,12 @@
-import "@lightleaplabs/tokens/public";
-import "@lightleaplabs/tokens/theme";
+import "@ds-gn/tokens/public";
+import "@ds-gn/tokens/theme";
+import "@ds-gn/tokens/properties";
 import "./brand-overrides.css";
 import "./globals.css";
 
 export const metadata = {
-  title: "LightLeap Next.js",
-  description: "LightLeap React wrappers in the Next.js App Router",
+  title: "DS-GN Next.js",
+  description: "DS-GN React wrappers in the Next.js App Router",
 };
 
 export default function RootLayout({ children }) {
