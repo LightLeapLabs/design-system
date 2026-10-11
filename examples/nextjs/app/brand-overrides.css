@@ -1,7 +1,7 @@
 /*
  * Application-owned overrides load after the public tokens and theme.
  * Start from the full template at:
- * node_modules/@lightleaplabs/tokens/dist/tokens.overrides.template.css
+ * node_modules/@ds-gn/tokens/dist/tokens.overrides.template.css
  */
 :root {
   --brand-on-light: oklch(55% 0.22 290);
@@ -10,8 +10,6 @@
   --button-solid-bg-on-dark: oklch(75% 0.16 290);
   --button-solid-bg-hover-on-light: oklch(48% 0.24 290);
   --button-solid-bg-hover-on-dark: oklch(82% 0.12 290);
-  --radius-button-on-light: 0.4rem;
-  --radius-button-on-dark: 0.4rem;
-  --radius-card-on-light: 0.4rem;
-  --radius-card-on-dark: 0.4rem;
+  --radius-button: 0.4rem;
+  --radius-card: 0.4rem;
 }

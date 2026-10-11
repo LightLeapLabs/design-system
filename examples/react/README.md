@@ -1,6 +1,6 @@
 # React
 
-This Vite app uses the generated wrappers from `@lightleaplabs/ui/react`.
+This Vite app uses the generated wrappers from `@ds-gn/ui/react`.
 
 ```bash
 bun install

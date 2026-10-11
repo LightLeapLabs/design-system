@@ -3,21 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LightLeap vanilla theming</title>
+    <title>DS-GN vanilla theming</title>
     <script type="module" src="/src/main.js"></script>
   </head>
   <body>
     <main>
-      <lll-card padding="lg">
-        <lll-stack gap="md">
-          <lll-heading size="xl">A themed LightLeap card</lll-heading>
-          <lll-text
-            >The purple accent and square corners come from application
-            overrides.</lll-text
+      <dsgn-card padding="lg">
+        <dsgn-heading slot="heading" heading-size="h3">
+          A themed DS-GN card
+        </dsgn-heading>
+        <dsgn-stack slot="footer" gap="md">
+          <dsgn-text
+            >The purple button color and its rounded corners come from application
+            overrides.</dsgn-text
           >
-          <lll-button appearance="solid">Continue</lll-button>
-        </lll-stack>
-      </lll-card>
+          <dsgn-button appearance="solid">Continue</dsgn-button>
+        </dsgn-stack>
+      </dsgn-card>
     </main>
   </body>
 </html>

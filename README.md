@@ -1,37 +1,57 @@
-# LightLeap Design System packages
+# DS-GN Design System packages
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/logo-full-dark.svg">
+  <img src="assets/logo-full.svg" alt="DS-GN" width="240">
+</picture>
+
+[![Examples](https://github.com/LightLeapLabs/design-system/actions/workflows/examples.yml/badge.svg)](https://github.com/LightLeapLabs/design-system/actions/workflows/examples.yml)
+[![UI on npm](https://img.shields.io/npm/v/@ds-gn/ui?label=%40ds-gn%2Fui)](https://www.npmjs.com/package/@ds-gn/ui)
+[![Tokens on npm](https://img.shields.io/npm/v/@ds-gn/tokens?label=%40ds-gn%2Ftokens)](https://www.npmjs.com/package/@ds-gn/tokens)
 
 > [!NOTE]
-> The `@lightleaplabs/ui` and `@lightleaplabs/tokens` packages ship built output only; their source code is not public. This public repository is the issue tracker and home for runnable integration examples—it does not contain the package source.
+> The `@ds-gn/ui` and `@ds-gn/tokens` packages ship built output only; their source code is not public. This public repository is the issue tracker and home for runnable integration examples—it does not contain the package source.
 
-LightLeap provides framework-agnostic web components, generated React wrappers,
+DS-GN provides framework-agnostic web components, generated React wrappers,
 and the design tokens that style them. See the
-[documentation](https://www.lightleaplabs.com/) for the complete component API.
+[documentation](https://docs.ds-gn.com/) for the complete component API.
+Visit [ds-gn.com](https://ds-gn.com/) for the product overview.
+
+## Migrating from LightLeap
+
+Existing LightLeap consumers should follow the
+[migration guide](https://docs.ds-gn.com/getting-started/migrate-from-lightleap/).
+Update package imports and branded APIs together: `lll-*` elements and custom
+events become `dsgn-*`, `onLll*` React handlers become `onDsgn*`, and branded
+`--lll-*` CSS variables become `--dsgn-*`. Native DOM events and generic public
+token names keep their names. DS-GN does not register legacy aliases.
 
 ## Install
 
 ```bash
-bun add @lightleaplabs/ui @lightleaplabs/tokens lit
+bun add @ds-gn/ui @ds-gn/tokens lit
 ```
 
 Import the token styles once, then import only the components you use:
 
 ```css
-@import "@lightleaplabs/tokens/public";
-@import "@lightleaplabs/tokens/theme";
+@import "@ds-gn/tokens/public";
+@import "@ds-gn/tokens/theme";
+@import "@ds-gn/tokens/properties";
 ```
 
 ```js
-import "@lightleaplabs/ui/button";
+import "@ds-gn/ui/button";
 ```
 
 ```html
-<lll-button appearance="outline">Get started</lll-button>
+<dsgn-button appearance="outline">Get started</dsgn-button>
 ```
 
 React consumers can use the generated wrappers:
 
 ```tsx
-import { Button } from "@lightleaplabs/ui/react";
+import { Button } from "@ds-gn/ui/react";
 
 export function Cta() {
   return <Button appearance="outline">Get started</Button>;
@@ -45,7 +65,7 @@ override. Copy it into your project, then uncomment only the values you want to
 change:
 
 ```bash
-cp node_modules/@lightleaplabs/tokens/dist/tokens.overrides.template.css \
+cp node_modules/@ds-gn/tokens/dist/tokens.overrides.template.css \
   ./src/brand-overrides.css
 ```
 
@@ -56,8 +76,9 @@ Load the override file after the public tokens and theme so its declarations win
 the cascade:
 
 ```css
-@import "@lightleaplabs/tokens/public";
-@import "@lightleaplabs/tokens/theme";
+@import "@ds-gn/tokens/public";
+@import "@ds-gn/tokens/theme";
+@import "@ds-gn/tokens/properties";
 @import "./brand-overrides.css";
 ```
 
@@ -67,19 +88,21 @@ Define both light and dark variants when a token supports surfaces:
 :root {
   --brand-on-light: oklch(55% 0.22 290);
   --brand-on-dark: oklch(75% 0.16 290);
-  --radius-button-on-light: 0.4rem;
-  --radius-button-on-dark: 0.4rem;
+  --radius-button: 0.4rem;
 }
 ```
 
+Radius tokens such as `--radius-button` have a single value for both surfaces;
+use the exact names listed in the published override template.
+
 See [`vanilla-theming`](examples/vanilla-theming) for a runnable example. The
-public custom properties inherit into LightLeap component shadow roots; do not
+public custom properties inherit into DS-GN component shadow roots; do not
 edit the package's generated `tokens.public.css` file.
 
 ## Examples
 
 The examples intentionally install released packages from the public npm
-registry. They never link to a LightLeap source workspace.
+registry. They never link to a DS-GN source workspace.
 
 | Example                                       | What it demonstrates                                  |
 | --------------------------------------------- | ----------------------------------------------------- |
@@ -91,13 +114,29 @@ registry. They never link to a LightLeap source workspace.
 Run all examples with Bun:
 
 ```bash
-bun install
+bun install --frozen-lockfile
+bun run check:published
 bun run build
 ```
 
 Each release dependency is pinned in the example manifest. CI installs from the
-public npm registry, verifies the installed package versions, and builds every
-example.
+public npm registry using the committed lockfile, verifies the installed package
+versions, and builds every example on pushes to main, pull requests, and manual
+runs. Scheduled testing against npm `latest` and automated updates to these pins
+are tracked separately in LL-144.
+
+## Contributing and support
+
+Contributions to the integration examples and public documentation are welcome.
+Install dependencies from the repository root and run the checks above before
+opening a pull request. Keep examples on published npm packages; do not substitute
+workspace, file, or linked copies of the UI or tokens packages.
+Component source and package-development work live outside this repository.
+
+For installation, theming, and API guidance, start with the
+[DS-GN documentation](https://docs.ds-gn.com/). Report reproducible package
+problems and feature requests through this repository's issue templates.
+LightLeap Labs LLC remains the legal company behind DS-GN.
 
 ## Issues and security
 

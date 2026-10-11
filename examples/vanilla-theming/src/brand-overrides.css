@@ -1,9 +1,9 @@
 /*
  * This is a shortened copy of the complete template at:
- * node_modules/@lightleaplabs/tokens/dist/tokens.overrides.template.css
+ * node_modules/@ds-gn/tokens/dist/tokens.overrides.template.css
  *
  * Copy that file into your application, uncomment the supported tokens you
- * need, and load it after @lightleaplabs/tokens/public and /theme.
+ * need, and load it after @ds-gn/tokens/public, /theme, and /properties.
  */
 :root {
   --brand-on-light: oklch(55% 0.22 290);
@@ -14,8 +14,6 @@
   --button-solid-bg-on-dark: oklch(75% 0.16 290);
   --button-solid-bg-hover-on-light: oklch(48% 0.24 290);
   --button-solid-bg-hover-on-dark: oklch(82% 0.12 290);
-  --radius-button-on-light: 0.4rem;
-  --radius-button-on-dark: 0.4rem;
-  --radius-card-on-light: 0.4rem;
-  --radius-card-on-dark: 0.4rem;
+  --radius-button: 0.4rem;
+  --radius-card: 0.4rem;
 }

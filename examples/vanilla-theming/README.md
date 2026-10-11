@@ -1,15 +1,15 @@
 # Vanilla theming
 
-This Vite app registers LightLeap custom elements directly and overrides the
+This Vite app registers DS-GN custom elements directly and overrides the
 public theme tokens in `src/brand-overrides.css`.
 
 ## Start from the supported override template
 
 After installing dependencies from the repository root, copy the complete
-template shipped by `@lightleaplabs/tokens`:
+template shipped by `@ds-gn/tokens`:
 
 ```bash
-cp node_modules/@lightleaplabs/tokens/dist/tokens.overrides.template.css \
+cp examples/vanilla-theming/node_modules/@ds-gn/tokens/dist/tokens.overrides.template.css \
   examples/vanilla-theming/src/brand-overrides.css
 ```
 
@@ -21,12 +21,18 @@ convention rather than a file produced by the package.
 
 `src/main.js` imports styles in this order:
 
-1. `@lightleaplabs/tokens/public` defines the public custom properties.
-2. `@lightleaplabs/tokens/theme` maps them onto the LightLeap theme.
-3. `brand-overrides.css` replaces the application-level values.
+1. `@ds-gn/tokens/public` defines the public custom properties.
+2. `@ds-gn/tokens/theme` maps them onto the DS-GN theme.
+3. `@ds-gn/tokens/properties` registers typed custom properties.
+4. `brand-overrides.css` replaces the application-level values.
 
-Keep the override import after the two package styles. The custom properties
+Keep the override import after the three package styles. The custom properties
 then inherit into component shadow roots without modifying package CSS.
+
+Card uses named slots: the heading occupies `heading`, and the text and button
+stack occupies `footer`. Unslotted children would not render. Components use a
+light surface by default; set `surface="dark"` on the card and its slotted
+components to use the dark token variants.
 
 ## Run the example
 

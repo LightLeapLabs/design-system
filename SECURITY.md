@@ -1,9 +1,9 @@
-# Security policy
+# DS-GN security policy
 
 ## Supported versions
 
 Security fixes are made for the latest published minor version of
-`@lightleaplabs/ui` and `@lightleaplabs/tokens`.
+`@ds-gn/ui` and `@ds-gn/tokens`.
 
 ## Report a vulnerability
 

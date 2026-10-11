@@ -1,7 +1,7 @@
 # Next.js App Router
 
 This example keeps the page and root layout as Server Components while placing
-the generated LightLeap React wrappers behind an explicit Client Component
+the generated DS-GN React wrappers behind an explicit Client Component
 boundary. Next.js still renders the client component to HTML on the server,
 then hydrates it in the browser so its event handlers become interactive.
 

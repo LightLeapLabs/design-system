@@ -1,7 +1,10 @@
 blank_issues_enabled: false
 contact_links:
-  - name: LightLeap documentation
-    url: https://www.lightleaplabs.com/
+  - name: Migrate from LightLeap
+    url: https://docs.ds-gn.com/getting-started/migrate-from-lightleap/
+    about: Update existing LightLeap installations to DS-GN packages and APIs.
+  - name: DS-GN documentation
+    url: https://docs.ds-gn.com/
     about: Read installation, API, theming, and compatibility documentation.
   - name: Security report
     url: https://github.com/lightleaplabs/design-system/security/policy

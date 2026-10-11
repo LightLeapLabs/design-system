@@ -16,8 +16,8 @@ body:
     attributes:
       label: Package
       options:
-        - "@lightleaplabs/ui"
-        - "@lightleaplabs/tokens"
+        - "@ds-gn/ui"
+        - "@ds-gn/tokens"
         - Both
     validations:
       required: true
