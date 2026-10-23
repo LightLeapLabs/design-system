@@ -5,6 +5,8 @@ The server emits an inert `<dsgn-button>` tag; `client:load` upgrades and hydrat
 it in the browser. Declarative Shadow DOM is not emitted, so a brief unstyled
 frame is possible before the custom element upgrades.
 
+Astro 7 requires Node 22.12 or newer.
+
 ```bash
 bun install
 bun --cwd examples/astro-ssr build
