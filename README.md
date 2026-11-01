@@ -8,12 +8,13 @@
 [![Examples](https://github.com/LightLeapLabs/design-system/actions/workflows/examples.yml/badge.svg)](https://github.com/LightLeapLabs/design-system/actions/workflows/examples.yml)
 [![UI on npm](https://img.shields.io/npm/v/@ds-gn/ui?label=%40ds-gn%2Fui)](https://www.npmjs.com/package/@ds-gn/ui)
 [![Tokens on npm](https://img.shields.io/npm/v/@ds-gn/tokens?label=%40ds-gn%2Ftokens)](https://www.npmjs.com/package/@ds-gn/tokens)
+[![Motion on npm](https://img.shields.io/npm/v/@ds-gn/motion?label=%40ds-gn%2Fmotion)](https://www.npmjs.com/package/@ds-gn/motion)
 
 > [!NOTE]
-> The `@ds-gn/ui` and `@ds-gn/tokens` packages ship built output only; their source code is not public. This public repository is the issue tracker and home for runnable integration examples—it does not contain the package source.
+> The `@ds-gn/ui`, `@ds-gn/tokens`, and `@ds-gn/motion` packages ship built output only; their source code is not public. This public repository is the issue tracker and home for runnable integration examples—it does not contain the package source.
 
 DS-GN provides framework-agnostic web components, generated React wrappers,
-and the design tokens that style them. See the
+the design tokens that style them, and a standalone motion library. See the
 [documentation](https://docs.ds-gn.com/) for the complete component API.
 Visit [ds-gn.com](https://ds-gn.com/) for the product overview.
 
@@ -57,6 +58,40 @@ export function Cta() {
   return <Button appearance="outline">Get started</Button>;
 }
 ```
+
+## Add motion
+
+Install the framework-free motion engine separately:
+
+```bash
+bun add @ds-gn/motion
+```
+
+```js
+import { sequence } from "@ds-gn/motion";
+
+const playback = sequence(document.querySelectorAll(".item"), {
+  preset: "slideUp",
+  duration: "moderate",
+  easing: "emphasized",
+  stagger: 80,
+  reducedMotion: "jump",
+});
+
+// On teardown, remove this run's animation effects.
+// playback.cancel();
+```
+
+Durations and easing resolve from the animated elements' motion CSS properties,
+with built-in fallbacks. The token styles above provide the theme values.
+`reducedMotion: "jump"` immediately shows the final state when the user prefers
+reduced motion; the default behavior substitutes a short fade. Keep content
+visible in its base styles so it remains available without animation.
+
+The core also supports timelines, enter/exit animations, and viewport triggers.
+Lit consumers can import `MotionController` from `@ds-gn/motion/lit` for lifecycle
+cleanup. See the [motion documentation](https://ds-gn.com/docs/motion/overview/)
+and the runnable [vanilla example](examples/vanilla-theming).
 
 ## Override the theme
 
@@ -106,7 +141,7 @@ registry. They never link to a DS-GN source workspace.
 
 | Example                                       | What it demonstrates                                  |
 | --------------------------------------------- | ----------------------------------------------------- |
-| [`vanilla-theming`](examples/vanilla-theming) | Custom elements and application-level token overrides |
+| [`vanilla-theming`](examples/vanilla-theming) | Custom elements, token overrides, and a replayable motion sequence |
 | [`react`](examples/react)                     | Generated React wrappers in a client application      |
 | [`nextjs`](examples/nextjs)                   | App Router SSR and an explicit client boundary         |
 | [`astro-ssr`](examples/astro-ssr)             | Node SSR, inert server markup, and client hydration   |
@@ -130,7 +165,7 @@ are tracked separately in LL-144.
 Contributions to the integration examples and public documentation are welcome.
 Install dependencies from the repository root and run the checks above before
 opening a pull request. Keep examples on published npm packages; do not substitute
-workspace, file, or linked copies of the UI or tokens packages.
+workspace, file, or linked copies of the UI, tokens, or motion packages.
 Component source and package-development work live outside this repository.
 
 For installation, theming, and API guidance, start with the

@@ -4,6 +4,7 @@ import { resolve, sep } from "node:path";
 const expected = {
   "@ds-gn/tokens": "0.5.0",
   "@ds-gn/ui": "0.5.0",
+  "@ds-gn/motion": "0.11.2",
 } as const;
 
 const examples = ["astro-ssr", "nextjs", "react", "vanilla-theming"];
@@ -25,6 +26,9 @@ for (const example of examples) {
   }
 
   for (const [name, version] of Object.entries(expected)) {
+    // Motion is demonstrated by the vanilla app; the other examples use UI
+    // and tokens only. Require its pin here just like the shared packages.
+    if (name === "@ds-gn/motion" && example !== "vanilla-theming") continue;
     if (manifest.dependencies?.[name] !== version) {
       throw new Error(`${example}: expected ${name}@${version}`);
     }
