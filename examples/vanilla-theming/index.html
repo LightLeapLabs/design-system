@@ -3,21 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DS-GN vanilla theming</title>
+    <title>DS-GN vanilla theming and motion</title>
     <script type="module" src="/src/main.js"></script>
   </head>
   <body>
     <main>
       <dsgn-card padding="lg">
-        <dsgn-heading slot="heading" heading-size="h3">
-          A themed DS-GN card
+        <dsgn-heading slot="heading" heading-size="h3" data-motion-item>
+          A themed card in motion
         </dsgn-heading>
         <dsgn-stack slot="footer" gap="md">
-          <dsgn-text
+          <dsgn-text data-motion-item
             >The purple button color and its rounded corners come from application
-            overrides.</dsgn-text
+            overrides. The heading, text, and button enter in sequence using
+            @ds-gn/motion. Reduced motion skips the animation.</dsgn-text
           >
-          <dsgn-button appearance="solid">Continue</dsgn-button>
+          <dsgn-button id="replay-motion" appearance="solid" data-motion-item>
+            Replay motion
+          </dsgn-button>
         </dsgn-stack>
       </dsgn-card>
     </main>

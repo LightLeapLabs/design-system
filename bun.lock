@@ -49,6 +49,7 @@
       "name": "@ds-gn-examples/vanilla-theming",
       "version": "0.0.0",
       "dependencies": {
+        "@ds-gn/motion": "0.11.2",
         "@ds-gn/tokens": "0.5.0",
         "@ds-gn/ui": "0.5.0",
         "lit": "^3.3.1",
@@ -164,6 +165,8 @@
     "@ds-gn-examples/react": ["@ds-gn-examples/react@workspace:examples/react"],
 
     "@ds-gn-examples/vanilla-theming": ["@ds-gn-examples/vanilla-theming@workspace:examples/vanilla-theming"],
+
+    "@ds-gn/motion": ["@ds-gn/motion@0.11.2", "", { "peerDependencies": { "lit": "^3.3.1" }, "optionalPeers": ["lit"] }, "sha512-mSwMM2mQISY94BhGerNKPjtGUUFw+hezsNwSsAG2u8icTGp4ss+31b4RsgL2Quy63Tj1cAWlwtVH6Bf5VJx5+g=="],
 
     "@ds-gn/tokens": ["@ds-gn/tokens@0.5.0", "", {}, "sha512-x+5wwhohEDE+CWdgCijlqjRe6U4+hmv8SHhI6InxgGeJyvHQZo30conwXNjQs84kOfde7Eem/447tv5mV/PV9A=="],
 

@@ -1,7 +1,8 @@
-# Vanilla theming
+# Vanilla theming and motion
 
 This Vite app registers DS-GN custom elements directly and overrides the
-public theme tokens in `src/brand-overrides.css`.
+public theme tokens in `src/brand-overrides.css`. It also demonstrates the
+published `@ds-gn/motion` package with a replayable entrance sequence.
 
 ## Start from the supported override template
 
@@ -34,9 +35,54 @@ stack occupies `footer`. Unslotted children would not render. Components use a
 light surface by default; set `surface="dark"` on the card and its slotted
 components to use the dark token variants.
 
+## Motion sequence
+
+`src/main.js` imports `sequence` from `@ds-gn/motion` and animates the heading,
+text, and button after the custom elements are registered. Each host has a
+`data-motion-item` attribute so the example can animate slotted content without
+reaching into component shadow roots. Click **Replay motion** to run it again.
+
+```js
+import { sequence } from "@ds-gn/motion";
+
+const playback = sequence(document.querySelectorAll("[data-motion-item]"), {
+  preset: "slideUp",
+  duration: "moderate",
+  easing: "emphasized",
+  stagger: 80,
+  reducedMotion: "jump",
+});
+```
+
+The duration and easing names resolve to `--duration-moderate` and
+`--ease-emphasized` from the loaded tokens. Override those properties in
+`brand-overrides.css` to change the theme's motion. Motion itself has no token
+package dependency and provides fallbacks when these properties are absent.
+
+With `prefers-reduced-motion: reduce`, this example jumps to the final state
+without movement or stagger. Content is visible in its base styles. The app
+cancels the previous playback before replaying, cancels on `pagehide` and Vite
+hot disposal, and replays when restored from the back/forward cache.
+
+See the [motion API documentation](https://ds-gn.com/docs/motion/overview/).
+For Lit components, `@ds-gn/motion/lit` provides a `MotionController` that manages
+cleanup when the host disconnects. This vanilla example uses the framework-free
+core directly.
+
 ## Run the example
 
 ```bash
-bun install
+bun install --frozen-lockfile
 bun --cwd examples/vanilla-theming dev
 ```
+
+Run a production build from the repository root:
+
+```bash
+bun run check:published
+bun --cwd examples/vanilla-theming build
+```
+
+To check accessibility, enable reduced motion in your OS or browser emulation,
+reload, and activate **Replay motion** with the keyboard. All content should
+remain visible and the button should stay usable without spatial animation.
